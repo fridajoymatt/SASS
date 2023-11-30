@@ -78,7 +78,7 @@ th {
 
 body {
   padding: 30x;
-  background: white;
+  background: rgb(209, 209, 209);
 }
 
 p {
@@ -97,7 +97,7 @@ p {
 }
 
 .btn, .card-action, .btn-danger, .card-cancel {
-  padding: 5px 12px;
+  padding: 0.3125rem 0.8571428571rem;
   border-radius: 3px;
 }
 
@@ -114,6 +114,11 @@ p {
   background: green;
 }
 
+.big {
+  font-size: 2rem;
+  text-transform: uppercase;
+}
+
 .btn-danger, .card-cancel {
   background: red;
 }
@@ -128,13 +133,29 @@ p {
 .card {
   padding: 10px;
   border-radius: 3px;
+  position: relative;
+  -ms-transform: rotate(0deg);
+  -webkit-transform: rotate(0deg);
+  transform: rotate(0deg);
+  background: white;
+}
+.card::after {
+  content: "";
+  width: 0;
+  height: 0;
+  border-top: 20px solid red;
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  position: absolute;
+  bottom: -20px;
+  left: calc(50% - 20px);
 }
 
 .card-actions {
   display: flex;
 }
 
-@media only screen and (min-width: 500px) {
+@media only screen and (max-width: 768) {
   .card-actions {
     display: block;
   }

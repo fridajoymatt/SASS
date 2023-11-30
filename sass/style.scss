@@ -1,15 +1,18 @@
-$medium : 500px;
-
-@import "libs/reset.scss";
-@import "libs/reponsive.scss";
-
+// $medium : 500px;
 $primary : rgb(10, 10, 140);
 $padding: 20x;
+$base-font-size: 14px;
+@import "libs/mixins.scss";
+@import "libs/reset.scss";
+@import "libs/reponsive.scss";
+@import "libs/function.scss";
+
+
 
 
 body {
     padding: $padding + 10;
-    background: white;
+    background: rgb(209, 209, 209);
 }
 
 p {
@@ -31,8 +34,9 @@ p {
 }
 
 %btn {
-        padding: 5px 12px;
-        border-radius: 3px;
+    // padding: 5px 12px;
+    padding: rem(5, 16) rem(12);
+    border-radius: 3px;
 
 }
 
@@ -52,6 +56,11 @@ p {
     .theme-vert & {
         background: green;
     }
+}
+
+.big {
+    font-size: 2rem;
+    text-transform: uppercase;
 }
 
 @media only screen and (max-width: 1200px) {
@@ -76,8 +85,18 @@ p {
 .card {
     @extend %shadow;
     padding: 10px;
+    // width: 100%;
+    // margin-left: 10px;
+    // margin-right: 10px;
     border-radius: 3px;
+    // @include rotate(60deg);
+    position: relative;
+    @include transform(rotate(0deg));
+    background: white;
+    @include triangle
+
 }
+
 
 
 .card-action {
