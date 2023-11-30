@@ -1,5 +1,5 @@
 // $medium : 500px;
-$primary : rgb(10, 10, 140);
+$primary : rgb(12, 12, 207);
 $padding: 20x;
 $base-font-size: 14px;
 @import "libs/mixins.scss";
@@ -43,7 +43,16 @@ p {
 .btn {
     @extend %btn;
     background: $primary;
-    color: white;
+    @debug lightness($primary);
+    // @if (2 > 1 and 3 > 4 and not 4 > 6){
+        @if(lightness($primary)< 50%) {
+            color: white;
+        }else {
+            color: black;
+        }
+    // }
+   
+    // color: white;
     text-decoration: none;
 
     &:hover {
@@ -110,6 +119,54 @@ p {
 .card-actions {
     display: flex;
 }
+
+@for $i from 1 through 4 {
+    .m-#{$i} {
+        margin: $i * 0.25rem;
+    }
+}
+
+$animals: bear, lion, camel;
+
+@each $animal in $animals {
+    .icon-#{$animal} {
+        background: url(img/#{$animal}.png);
+    }
+}
+$categories:
+chien rgb(94, 93, 93),
+chat rgb(242, 194, 0),
+poisson rgb(194, 194, 255);
+
+@each $category in $categories {
+    .#{nth($category,1)} {
+        background: nth($category, 2);
+        @if (lightness(nth($category, 2)) > 50%) { // Vérifie la luminosité de la couleur de chaque catégorie
+            color: white;
+          } else {
+            color: black;
+          }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 @media screen {
     // padding: 10px;

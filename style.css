@@ -102,13 +102,16 @@ p {
 }
 
 .btn, .card-action, .btn-danger, .card-cancel {
-  background: rgb(10, 10, 140);
+  background: rgb(12, 12, 207);
   color: white;
   text-decoration: none;
 }
+.btn else, .card-action else, .btn-danger else, .card-cancel else {
+  color: black;
+}
 .btn:hover, .card-action:hover, .btn-danger:hover, .card-cancel:hover {
-  background: #03032d;
-  background: rgba(10, 10, 140, 0.5);
+  background: #06066f;
+  background: rgba(12, 12, 207, 0.5);
 }
 .theme-vert .btn, .theme-vert .card-action, .theme-vert .btn-danger, .theme-vert .card-cancel {
   background: green;
@@ -153,6 +156,56 @@ p {
 
 .card-actions {
   display: flex;
+}
+
+.m-1 {
+  margin: 0.25rem;
+}
+
+.m-2 {
+  margin: 0.5rem;
+}
+
+.m-3 {
+  margin: 0.75rem;
+}
+
+.m-4 {
+  margin: 1rem;
+}
+
+.icon-bear {
+  background: url(img/bear.png);
+}
+
+.icon-lion {
+  background: url(img/lion.png);
+}
+
+.icon-camel {
+  background: url(img/camel.png);
+}
+
+.chien {
+  background: rgb(94, 93, 93);
+}
+.chien else {
+  color: black;
+}
+
+.chat {
+  background: rgb(242, 194, 0);
+}
+.chat else {
+  color: black;
+}
+
+.poisson {
+  background: rgb(194, 194, 255);
+  color: white;
+}
+.poisson else {
+  color: black;
 }
 
 @media only screen and (max-width: 768) {
