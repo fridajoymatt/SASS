@@ -1,0 +1,106 @@
+$medium : 500px;
+
+@import "libs/reset.scss";
+@import "libs/reponsive.scss";
+
+$primary : rgb(10, 10, 140);
+$padding: 20x;
+
+
+body {
+    padding: $padding + 10;
+    background: white;
+}
+
+p {
+    padding: 20px;
+}
+
+.table {
+    width: 100%;
+
+    td {
+        border: 1px solid #ccc;
+    }
+
+    thead {
+        background: #000;
+        color: #fff;
+    }
+
+}
+
+%btn {
+        padding: 5px 12px;
+        border-radius: 3px;
+
+}
+
+.btn {
+    @extend %btn;
+    background: $primary;
+    color: white;
+    text-decoration: none;
+
+    &:hover {
+        background: darken($primary, 20);
+        // background: lighten($primary, 20);
+        background: rgba($primary, 0.5);
+
+    }
+
+    .theme-vert & {
+        background: green;
+    }
+}
+
+@media only screen and (max-width: 1200px) {
+    // padding: auto;
+}
+
+// .call-to-action {
+//     @extend .btn;
+// }
+
+.btn-danger {
+    @extend .btn;
+    background: red;
+    &:hover {
+        background: rgb(123, 4, 4);
+    }
+}
+%shadow {
+    box-shadow: 0px 1px 5px rgba(0,0,0,0.2);
+
+}
+.card {
+    @extend %shadow;
+    padding: 10px;
+    border-radius: 3px;
+}
+
+
+.card-action {
+    @extend .btn;
+}
+
+.card-cancel {
+    @extend .btn-danger;
+}
+
+.card-actions {
+    display: flex;
+}
+
+@media screen {
+    // padding: 10px;
+}
+
+@media #{$medium-down} {
+    .card-actions {
+        display: block;
+    }
+    .btn {
+        width: 100%
+    }
+}
